@@ -1,8 +1,8 @@
-package com.feng.tomcat.ch3.connector;
+package com.feng.tomcat.ch4.connector;
 
-import com.feng.tomcat.ch3.connector.http.Constants;
-import com.feng.tomcat.ch3.connector.http.HttpRequest;
-import com.feng.tomcat.ch3.util.StringManager;
+import com.feng.tomcat.ch4.connector.http.Constants;
+import com.feng.tomcat.ch4.connector.http.HttpRequest;
+import org.apache.naming.StringManager;
 
 import javax.servlet.ReadListener;
 import javax.servlet.ServletInputStream;
