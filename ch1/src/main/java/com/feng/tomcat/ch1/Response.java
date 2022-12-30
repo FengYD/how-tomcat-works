@@ -42,7 +42,6 @@ public class Response {
             if (file.exists()) {
                 // 这里需要加上http响应报文的状态行以及header，不然无法解析
                 String header =  "HTTP/1.1 200 OK\r\n" +
-                        "Content-Type: text/html\r\n" +
                         "\r\n";
                 output.write(header.getBytes(StandardCharsets.UTF_8));
                 fis = new FileInputStream(file);
