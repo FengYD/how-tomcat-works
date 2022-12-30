@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.nio.charset.StandardCharsets;
 
 /**
  * @author fengyadong
@@ -39,6 +40,11 @@ public class Response {
         try {
             File file = new File(HttpServer.WEB_ROOT, request.getUri());
             if (file.exists()) {
+                // 这里需要加上http响应报文的状态行以及header，不然无法解析
+                String header =  "HTTP/1.1 200 OK\r\n" +
+                        "Content-Type: text/html\r\n" +
+                        "\r\n";
+                output.write(header.getBytes(StandardCharsets.UTF_8));
                 fis = new FileInputStream(file);
                 int ch = fis.read(bytes, 0, BUFFER_SIZE);
                 while (ch != -1) {

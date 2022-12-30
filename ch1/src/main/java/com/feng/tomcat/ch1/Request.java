@@ -10,7 +10,7 @@ import java.io.InputStream;
  */
 public class Request {
 
-    private InputStream input;
+    private final InputStream input;
     private String uri;
 
     public Request(InputStream input) {
@@ -19,7 +19,7 @@ public class Request {
 
     public void parse() {
         // Read a set of characters from the socket
-        StringBuffer request = new StringBuffer(2048);
+        StringBuilder request = new StringBuilder(2048);
         int i;
         byte[] buffer = new byte[2048];
         try {
